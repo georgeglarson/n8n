@@ -1,3 +1,11 @@
+## [2.19.1](https://github.com/n8n-io/n8n/compare/n8n@2.19.0...n8n@2.19.1) (2026-04-29)
+
+
+### Bug Fixes
+
+* **editor:** Keep publish actions menu enabled for published workflows ([#29411](https://github.com/n8n-io/n8n/issues/29411)) ([41ade46](https://github.com/n8n-io/n8n/commit/41ade461ac78c6304e91e4a90666248727bb5e2f))
+
+
 # [2.19.0](https://github.com/n8n-io/n8n/compare/n8n@2.18.0...n8n@2.19.0) (2026-04-28)
 
 
