@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { N8nButton, N8nText } from '@n8n/design-system';
 import { useRootStore } from '@n8n/stores/useRootStore';
 import { useUsersStore } from '@/features/settings/users/users.store';
@@ -12,12 +12,17 @@ import { AGENT_BUILDER_VIEW } from '../constants';
 import AgentBuilderProgress from '../components/AgentBuilderProgress.vue';
 
 const router = useRouter();
+const route = useRoute();
 const rootStore = useRootStore();
 const usersStore = useUsersStore();
 const projectsStore = useProjectsStore();
 const telemetry = useTelemetry();
 
-const projectId = computed(() => projectsStore.personalProject?.id ?? '');
+const projectId = computed(() =>
+	typeof route.query.projectId === 'string'
+		? route.query.projectId
+		: (projectsStore.personalProject?.id ?? ''),
+);
 const firstName = computed(() => usersStore.currentUser?.firstName ?? '');
 
 const inputText = ref('');
